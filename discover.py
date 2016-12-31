@@ -42,7 +42,7 @@ def check_200(url):
             print('You\'re banned from LiveJournal. Sleeping for 1 hour, then ABORTING.')
             time.sleep(3600)
             raise Exception('Banned from LiveJournal. ABORTING.')
-        elif response.status_code not in (200, 404, 410, 403):
+        elif response.status_code not in (200, 404, 410, 403, 500):
             tries += 1
         else:
             return status_code
